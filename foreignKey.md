@@ -1,12 +1,12 @@
-# Foregin Key
-- Condition to use foregin Key : parent table should have primary Key
+# Foreign Key
+- Condition to use Foreign Key : parent table should have primary Key
 - It is a attribute whose values are dependent on another column(i.e Primary Key)
 - It is a child column which is dependent on another Parent column (i.e Primary Key) for its values
-- A table can have more than 1 Foregin Key
+- A table can have more than 1 Foreign Key
 - It can contain `null` and `duplicate` values
 - It can be made both at column and row/table level.
 
-# Creation of Foregin Key
+# Creation of Foreign Key
 
 Suppose there is a table `student` with primary key `roll_no`
 
@@ -26,7 +26,7 @@ CREATE TABLE sports
     sport varchar2(10),
 );
 ```
-> `references` is used to make a foregin key followed by table name to which we have to refer 
+> `references` is used to make a Foreign key followed by table name to which we have to refer 
 
 > while inserting data we can only enter values of `roll_no` which are present in the column `roll_no` of  `student` table 
 
@@ -49,7 +49,7 @@ CREATE TABLE table_name
 (
     col_name1 datatype,
     col_name2 datatype,
-    FOREGIN KEY(col_name1) REFERENCES old_table
+    Foreign KEY(col_name1) REFERENCES old_table
 );
 ```
 eg : 
@@ -58,7 +58,7 @@ CREATE TABLE sports
 (
     roll_no number,
     sport varchar2(10),
-    FOREGIN KEY(roll_no) REFERENCES student
+    Foreign KEY(roll_no) REFERENCES student
 );
 ```
 
@@ -83,9 +83,9 @@ EMPCODE | ENAME | CITY | MGR
 
 > here `EMPCODE` is primary key
 
-> `MGR` is Foregin Key
+> `MGR` is Foreign Key
 
-# Foregin Key as Primary Key
+# Foreign Key as Primary Key
 simply add a primary key to that column 
 ```
 ALTER TABLE tableName ADD PRIMARY KEY(col_name);
@@ -102,12 +102,12 @@ CREATE TABLE sports
 ```
 
 ---
-# Two Tpes of Foregin Key
-- **Atomic Foregin Key** : Single column
+# Two Tpes of Foreign Key
+- **Atomic Foreign Key** : Single column
     - eg: roll_no, student_id, ...
-- **Composite Foregin Key** : Multiple columns
+- **Composite Foreign Key** : Multiple columns
 
-eg. of composite foregin key: 
+eg. of composite Foreign key: 
 
 table `orders`
 ORDERNO | ITEMNO | NAME
@@ -125,9 +125,9 @@ CREATE TABLE orderStatus
     itemNo number,
     status varchar2(10),
     PRIMARY KEY(orderNo, itemNo),
-    FOREGIN KEY(orderNo, itemNo) REFERENCES orders
+    Foreign KEY(orderNo, itemNo) REFERENCES orders
 );
 ```
-> in this table `orderNo`, `itemNo` are made as primary key and foregin key
+> in this table `orderNo`, `itemNo` are made as primary key and Foreign key
 
 > this table will refer to the table `orders`
