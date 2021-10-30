@@ -163,6 +163,104 @@ mno  | ddn  | painting
 def  | mrt  | tracking
 mno  | ddn  | skating
 
+
+
+
 ## Outer Join
 - returns all rows from both tables which satisfy or don't satisfy the join condition
 - `+` is used only on one side of the join condition.
+- if we use `+` with 1st table then no. of rows displayed will be always less or equal to no. of rows in 2nd table in output
+
+
+if Table `one` is :
+
+NAME | CITY
+---- | ----
+abc  | ddn
+def  | mrt
+ghi  | hrd
+
+
+Table `two`
+
+NAME | HOBBY
+---- | -----
+abc  | cricket
+abc  | songs
+ghi  | painting
+mno  | painting
+mno  | skating
+
+**Ques 1:** `SELECT * FROM one, two WHERE one.NAME = two.NAME;`
+
+OUTPUT:
+
+NAME | CITY | NAME | HOBBY
+---- | -----| ---- | ----
+abc  | ddn  | abc  | cricket
+abc  | ddn  | abc  | songs
+ghi  | hrd  | ghi  | painting
+
+## Left Outer Join
+- extra rows will be added on left side of the table after applying condition
+
+**Ques 2:** `SELECT * FROM one, two WHERE one.NAME = two.NAME(+);`
+<br>OR<br>
+`SELECT * FROM one LEFT JOIN two ON one.NAME = two.NAME;`
+
+Working : 
+
+- 1st `one.name = two.name` is displayed
+- then, as `+` is on table `two` so all rows of table `one` will be displayed which are left
+
+OUTPUT:
+
+NAME | CITY | NAME | HOBBY
+---- | -----| ---- | ----
+abc  | ddn  | abc  | cricket
+abc  | ddn  | abc  | songs
+ghi  | hrd  | ghi  | painting
+def  | mrt  
+
+## Right Outer Join
+- extra rows will be added on right side of the table after applying condition
+
+**Ques 3:** `SELECT * FROM one, two WHERE one.NAME(+) = two.NAME;`
+<br>OR<br>
+`SELECT * FROM one RIGHT JOIN two ON one.NAME = two.NAME;`
+
+Working : 
+
+- 1st `one.name = two.name` is displayed
+- then, as `+` is on table `one` so all rows of table `two` will be displayed which are left
+
+OUTPUT:
+
+NAME | CITY | NAME | HOBBY
+---- | -----| ---- | ----
+abc  | ddn  | abc  | cricket
+abc  | ddn  | abc  | songs
+ghi  | hrd  | ghi  | painting
+|    |      | mno  | skating
+|    |      | mno  | painting
+
+NOTE : one.NAME(+) = two.NAME(+) is not allowed
+
+## Full Outer Join
+- extra rows will be added on both sides of the table after applying condition
+
+Ques 4: `SELECT * FROM one FULL OUTER JOIN two ON one.NAME = two.NAME;`
+
+Working:
+- 1st `one.name = two.name` is displayed
+- then, left and right side(order can be any(left-right or right -left)) of the table will be displayed
+OUTPUT :
+
+NAME | CITY | NAME | HOBBY
+---- | ---- | ---- | ------
+abc  | ddn  | abc  | cricket
+abc  | ddn  | abc  | songs
+ghi  | hrd  | ghi  | painting
+|    |      | mno  | painting
+|    |      | mno  | skating
+def  | mrt  |

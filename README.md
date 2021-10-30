@@ -22,4 +22,6 @@ S. NO    |   Title   |cmd
 18.| [CODD rules](coddRules.md)|  all 12 rules, about views
 19.| [SubQueries](subQueries.md)| queries on multiple levels
 20.| [Group By & Having](groupBy.md)| group by, having, difference b/w where & having
-21.| [Join](join.md)| cartesian product,  
+21.| [Join](join.md)| cartesian product, types of joins=> equi, nature, inner, outer join(left, right, full)
+22.| [Functional Dependency](functionalDependency.md)| defination, valid and invalid FDs, 
+23.| [Normalization](normalization.md)| 1NF, 2NF, 3NF

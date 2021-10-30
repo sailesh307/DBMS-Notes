@@ -9,6 +9,10 @@ ECODE | ENAME | DCODE | PPNO | CITY | VOTERID
 - a column which has the features of becoming a Primary Key
     - eg: `ecode`, `voterid`, `ppno` (passport no)
 
+# Composite Key
+- It is a Key having two or more attributes that together can uniquely identify a tuple in a table 
+- Also known as Comound Key
+
 # Alternate Key
 - columns left out of candidate keys after selecting primary key
     - eg: if `ecode` is selected as primary key
