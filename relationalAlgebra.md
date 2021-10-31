@@ -19,9 +19,9 @@ RollNo | Name | City
 4     | A    | HRD
 
 ## Projection (π)
-- This operation is used to select vertical columns from of the relation(table)(vertical slicing).
+- This operation is used to select vertical columns from the relation(table)(vertical slicing).
 
-$ π_{rollNo}(STUDENT) $
+$π_{rollNo}(STUDENT)$
  = `π(STUDENT, rollNo)` this will give
 
 ROLLNO |
