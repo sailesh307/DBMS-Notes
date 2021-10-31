@@ -21,8 +21,9 @@ RollNo | Name | City
 ## Projection (π)
 - This operation is used to select vertical columns from the relation(table)(vertical slicing).
 
-$π_{rollNo}(STUDENT)$
- = `π(STUDENT, rollNo)` this will give
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;\pi_{rollNo}(STUDENT)" title="π(STUDENT, rollNo)" />
+
+this will give
 
 ROLLNO |
 ------ |
@@ -36,7 +37,7 @@ SQL : `SELECT rollNo FROM STUDENT;`
 ## Selection (σ)
 - This operation is used to display horizontal rows from of the relation(table)(horizontal slicing).
 
-$ σ_{city=HRD}(STUDENT) = $
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;\sigma_{city=HRD}(STUDENT)" title="σ_{city=HRD}(STUDENT) =" />
 
 rollNo | Name | City
 ------ | ---- | ----
@@ -44,13 +45,15 @@ rollNo | Name | City
 
 **Question :** Display names of Students who are from MRT.
 
-**Solution:** First $ σ(select) $ then $ π(project) $
+**Solution:** First `σ(select)` then `π(project)`
 
-- 1st all details of student who are from `mrt` will be extracted from table $ σ(select) $ 
-- then out of this only `name` will be extracted $ π(project) $
+- 1st all details of student who are from `mrt` will be extracted from table `σ(select)` 
+- then out of this only `name` will be extracted `π(project)`
 
-$ π_{name}(σ_{city=MRT}(STUDENT)) $
-=>
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\inline&space;\pi_{name}(\sigma_{city=MRT}(STUDENT)" title="\bg_white \inline \pi_{name}(\sigma_{city=MRT}(STUDENT)" />
+
+Output will be =>
+
 name |
 ---- |
 B    |
