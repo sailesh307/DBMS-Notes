@@ -25,3 +25,5 @@ S. NO    |   Title   |cmd
 21.| [Join](join.md)| cartesian product, types of joins=> equi, nature, inner, outer join(left, right, full)
 22.| [Functional Dependency](functionalDependency.md)| defination, valid and invalid FDs, 
 23.| [Normalization](normalization.md)| 1NF, 2NF, 3NF
+24.| [Transaction](transaction.md)| defination, ACID, locks, storage, recovery
+25.| [Relational Algebra](relationalAlgebra.md)| selection, projection, union, intersection, minus, cartesian, join, rename
